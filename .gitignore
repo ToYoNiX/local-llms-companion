@@ -1,2 +1,6 @@
+# Env files
+.env
+
 # binary pacakges
 bin/*
+
