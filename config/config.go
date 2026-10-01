@@ -2,7 +2,7 @@ package config
 
 import (
 	"os"
-	"fmt"
+	"log"
 	// this automatically loads and Setenv the environment variables in the code
 	_ "github.com/joho/godotenv/autoload"
 )
@@ -18,8 +18,7 @@ type OllamaConfig struct {
 func LoadConfig () Config {
 	url, exists := os.LookupEnv("OLLAMA_URL")
 	if !exists {
-		fmt.Println("OLLAMA_URL is not set!")
-		os.Exit(1)
+		log.Fatal("OLLAMA_URL is not set!")
 	}
 
 	cfg := Config {
